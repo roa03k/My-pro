@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Viewer</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="pdf-viewer"></iframe>
+
+  <script>
+    // 접속 시 PC 버전 여부를 묻는 팝업
+    const isPC = confirm("PC 버전으로 보시겠습니까?");
+    const viewer = document.getElementById('pdf-viewer');
+
+    if (isPC) {
+      // '확인(예)'을 누른 경우 -> Pro.pdf 파일 표시
+      viewer.src = 'Pro.pdf';
+    } else {
+      // '취소(아니오)'를 누른 경우 -> P.pdf 파일 표시
+      viewer.src = 'P.pdf';
+    }
+  </script>
+</body>
+</html>
